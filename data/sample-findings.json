@@ -1,0 +1,56 @@
+[
+  {
+    "id": "CSPM-001",
+    "provider": "AWS",
+    "service": "S3",
+    "severity": "Critical",
+    "title": "Public storage bucket detected",
+    "description": "A storage bucket allows public access. This can expose sensitive files to the internet.",
+    "remediation": "Disable public access, review bucket policy, and enable least-privilege access controls."
+  },
+  {
+    "id": "CSPM-002",
+    "provider": "AWS",
+    "service": "IAM",
+    "severity": "High",
+    "title": "Administrator policy assigned to user",
+    "description": "A user has broad administrator privileges instead of a scoped role.",
+    "remediation": "Replace direct admin access with role-based permissions and enable MFA."
+  },
+  {
+    "id": "CSPM-003",
+    "provider": "Azure",
+    "service": "Network Security Group",
+    "severity": "High",
+    "title": "SSH open to the internet",
+    "description": "Port 22 is exposed to 0.0.0.0/0, increasing brute-force risk.",
+    "remediation": "Restrict SSH to trusted IP addresses or use a VPN/bastion host."
+  },
+  {
+    "id": "CSPM-004",
+    "provider": "GCP",
+    "service": "Cloud Logging",
+    "severity": "Medium",
+    "title": "Audit logging is not fully enabled",
+    "description": "Some administrative actions may not be recorded for investigation and compliance.",
+    "remediation": "Enable admin activity, data access, and system event logs where required."
+  },
+  {
+    "id": "CSPM-005",
+    "provider": "AWS",
+    "service": "EBS",
+    "severity": "Medium",
+    "title": "Volume encryption disabled",
+    "description": "A disk volume is not encrypted at rest.",
+    "remediation": "Enable encryption by default and rotate sensitive workloads to encrypted volumes."
+  },
+  {
+    "id": "CSPM-006",
+    "provider": "Azure",
+    "service": "Storage Account",
+    "severity": "Low",
+    "title": "Soft delete is disabled",
+    "description": "Deleted objects cannot be recovered if a user or process removes them accidentally.",
+    "remediation": "Enable soft delete and configure retention based on business requirements."
+  }
+]
